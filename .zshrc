@@ -123,6 +123,7 @@ alias ls='lsd'
 alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias S='pkg install'
+alias dot='cd ~/.dotfiles'
 
 #------------------------------------------
 
