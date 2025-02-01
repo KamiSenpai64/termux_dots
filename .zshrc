@@ -148,7 +148,6 @@ alias /='cd /'
         
 # Print system information
 
-neofetch
 
 #------------------------------------------
 
