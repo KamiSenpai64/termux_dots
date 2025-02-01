@@ -133,6 +133,7 @@ alias S='pkg install'
 alias dot='cd ~/.dotfiles'
 alias ~='cd ~'
 alias /='cd /'
+alias python='python3'
 
 #------------------------------------------
 
