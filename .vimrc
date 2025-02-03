@@ -61,21 +61,6 @@ set history=1000
 
 colorscheme molokai
 
-" PLUGINS ---------------------------------------------------------------- {{{
-
-" Plugin code goes here.
-
-call plug#begin('~/.vim/plugged')
-
-  Plug 'dense-analysis/ale'
-
-  Plug 'preservim/nerdtree'
-
-call plug#end()
-
-" }}}
-
-
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Mappings code goes here.

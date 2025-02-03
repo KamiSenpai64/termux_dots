@@ -134,6 +134,7 @@ alias dot='cd ~/.dotfiles'
 alias ~='cd ~'
 alias /='cd /'
 alias python='python3'
+alias push='$HOME/.scripts/dots.sh'
 
 #------------------------------------------
 
