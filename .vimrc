@@ -1,91 +1,69 @@
-" Turn syntax highlighting on.
+" Options
+set encoding=utf8
+set clipboard=unnamedplus " Enables the clipboard between Vim/Neovim and other applications.
+set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
+set cursorline " Highlights the current line in the editor
+set hidden " Hide unused buffers
+set autoindent " Indent a new line
+set mouse=a " Allow to use the mouse in the editor
+set number " Shows the line numbers
+set splitbelow splitright " Change the split screen behavior
+set title " Show file title
+set wildmenu " Show a more advance menu
+set guifont=hack_nerd_font:h11
+"set cc=100 " Show at 80 column a border for good code style                      
+filetype plugin indent on   " Allow auto-indenting depending on file type
 syntax on
+set spell " enable spell check (may need to download language package)
+set ttyfast " Speed up scrolling in Vim`:wq
 
-" Disable compatibility with vi which can cause unexpected issues.
-set nocompatible
+let g:kite_supported_languages = ['python', 'javascript']
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-fugitive'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+call plug#end()
 
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
+"colorscheme gruvbox
+let g:bargreybars_auto=0
+let g:airline_solorized_bg='dark'
+let g:airline_powerline_fonts=1
+let g:airline#extension#tabline#enable=1
+let g:airline#extension#tabline#left_sep=' '
+let g:airline#extension#tabline#left_alt_sep='|'
+let g:airline#extension#tabline#formatter='unique_tail'
+let NERDTreeQuitOnOpen=1
 
-" Load an indent file for the detected file type.
-filetype indent on	
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
 
-" Add numbers to each line on the left-hand side.
-set number
 
-" Set shift width to 4 spaces.
-set shiftwidth=4
+nnoremap nn :NERDTreeToggle<CR>
+nnoremap mm :wincmd w<CR>
 
-" Set tab width to 4 columns.
-set tabstop=4
-
-" Use space characters instead of tabs.
-set expandtab
-
-" Do not save backup files.
-set nobackup
-
-" Do not let cursor scroll below or above N number of lines when scrolling.
-set scrolloff=10
-
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
-
-" While searching though a file incrementally highlight matching characters as you type.
-set incsearch
-
-" Ignore capital letters during search.
-set ignorecase
-
-" Override the ignorecase option if searching for capital letters.
-" This will allow you to search specifically for capital letters.
-set smartcase
-
-" Show partial command you type in the last line of the screen.
-set showcmd
-
-" Show the mode you are on the last line.
-set showmode
-
-" Show matching words during a search.
-set showmatch
-
-" Use highlighting when doing a search.
-set hlsearch
-
-" Set the commands to save in history default number is 20.
-set history=1000
-
-colorscheme molokai
-
-" MAPPINGS --------------------------------------------------------------- {{{
-
-" Mappings code goes here.
-
-inoremap jj <esc>
+inoremap jj <esc>     
 let mapleader = " "
 nnoremap <space> :
-nnoremap nn :NERDTreeToggle<cr>
-
-
-" }}}
-
-
-" VIMSCRIPT -------------------------------------------------------------- {{{
-
-" This will enable code folding.
-" Use the marker method of folding.
-" More Vimscripts code goes here.
-
-" }}}
-
-
-" STATUS LINE ------------------------------------------------------------ {{{
-
-" Status bar code goes here.
-
-" something
-" }}}
