@@ -1,0 +1,4 @@
+config-update
+set-theme new.theme
+q
+colorscheme onedark

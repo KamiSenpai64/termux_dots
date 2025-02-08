@@ -1,0 +1,33 @@
+# Key Bindings (Vim-style navigation)
+unbind common h
+unbind common l
+unbind common j
+unbind common k
+unbind common g
+unbind common G
+unbind common d
+unbind common u
+unbind common /
+unbind common n
+unbind common N
+unbind common q
+unbind common x
+unbind common Enter
+
+# Vim-style navigation
+bind common h previous_column
+bind common l next_column
+bind common j down
+bind common k up
+bind common g move_first
+bind common G move_last
+bind common d delete
+bind common u undo
+bind common / search
+bind common n search_next
+bind common N search_prev
+
+# Playback controls
+bind common x play_pause
+bind common q quit
+bind common enter play
