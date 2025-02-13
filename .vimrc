@@ -1,7 +1,6 @@
 " Options
 set encoding=utf8
 set clipboard=unnamedplus " Enables the clipboard between Vim/Neovim and other applications.
-set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
 set hidden " Hide unused buffers
 set autoindent " Indent a new line
 set mouse=a " Allow to use the mouse in the editor

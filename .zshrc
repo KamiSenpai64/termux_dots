@@ -11,6 +11,9 @@ export PATH=$HOME/.local/bin:$PATH
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Make MAN pages open with nvim
+export MANPAGER="nvim +Man!"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -133,8 +136,8 @@ alias S='pkg install'
 alias dot='cd ~/.dotfiles'
 alias ~='cd ~'
 alias /='cd /'
-alias python='python3'
 alias push='$HOME/.scripts/dots.sh'
+alias vim='nvim'
 
 #------------------------------------------
 
@@ -152,9 +155,14 @@ alias push='$HOME/.scripts/dots.sh'
 
 #------------------------------------------
 
-EDITOR="vim"
+EDITOR="nvim"
 
 #added a change
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+plugins=( 
+    # other plugins...
+    zsh-autosuggestions
+)
